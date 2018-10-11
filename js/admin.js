@@ -24,12 +24,31 @@ function refreshProducts()
         success: function (products)
         {
             onGetProductsSuccess(products);
+            refreshSuccessAlert();
         },
         error: function (request, message, error)
         {
             handleException(request, message, error);
         }
     });
+}
+
+function refreshSuccessAlert()
+{
+    $(".refreshSuccessAlert").show();
+    setTimeout(function ()
+    {
+        $(".refreshSuccessAlert").hide();
+    }, 5000);
+}
+
+function removedProductAlert()
+{
+    $(".removedProductAlert").show();
+    setTimeout(function ()
+    {
+        $(".removedProductAlert").hide();
+    }, 5000);
 }
 
 function removeProduct(productId)
@@ -40,6 +59,7 @@ function removeProduct(productId)
         success: function ()
         {
             refreshProducts();
+            removedProductAlert();
         },
         error: function (request, message, error)
         {
@@ -89,19 +109,26 @@ function buildProductRow(product)
     /** @namespace product.price */
     let ret =
         "<tr>" +
-        "<td class='productId small'>" + product.id + "</td>" +
+        "<td class='productId small td-alignment-center'>" + product.id + "</td>" +
         "<td class='small'>" + product.name + "</td>" +
-        "<td class='small'>" + product.price + "</td>" +
-        "<td class='small'>" + product.description + "</td>" +
-        "<td class='small extend'>" + product.stock + "</td>" +
-        "<td class='small'><img src='" + product.imageURL + "' alt='' height='100' width='50'></td>" +
-        "<td class='small'><button type='button' class='btn btn-info' id='editProduct'><i class='fas fa-pen fa-1x'></i></button></td>" +
-        "<td class='small'><button type='button' class='btn btn-danger' id='removeProduct'><i class='fas fa-minus fa-1x'></i></button></td>" +
+        "<td class='small td-alignment-center'>" + product.price + "</td>" +
+        "<td class='small extend td-alignment-left'>" + product.description + "</td>" +
+        "<td class='small td-alignment-center'>" + product.stock + "</td>" +
+        "<td class='small td-alignment-center product_img'><img src='" + product.imageURL + "' alt='' height='100' width='100'></td>" +
+        "<td class='small td-alignment-center'>" +
+        "<button type='button' class='btn btn-sm btn-info' id='editProduct'>" +
+        "<i class='fas fa-pen' style='font-size: 15px; text-align: center; vertical-align: middle;'></i>" +
+        "</button></td>" +
+        "<td class='small td-alignment-center'>" +
+        "<button type='button' class='btn btn-sm btn-danger' id='removeProduct'>" +
+        "<i class='fas fa-times' style='font-size: 20px; text-align: center; vertical-align: middle;'></i>" +
+        "</button></td>" +
         "</tr>";
     return ret;
 }
 
-function editProduct(id) {
+function editProduct(id)
+{
     window.open('../pages/editProduct.html?id=' + id);
 
 }

@@ -15,4 +15,46 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    vert-align: middle;
+}
+
+.table td, .table th {
+    vertical-align: middle;
+}
+
+.td-alignment-center {
+    text-align: center;
+}
+
+.td-alignment-left {
+    text-align: left;
+}
+
+.product_img {
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+}
+
+.product_img img {
+    width: 100%;
+    height: 100%;
+}
+
+.refreshSuccessAlert {
+    position: fixed;
+    bottom: 5px;
+    left: 2%;
+    width: 96%;
+}
+
+.removedProductAlert {
+    position: fixed;
+    bottom: 5px;
+    left: 2%;
+    width: 96%;
+}
+
+.alert {
+    display: none;
 }

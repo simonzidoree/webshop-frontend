@@ -18,38 +18,51 @@
 <body>
 <div class="container">
     <div class="row">
-        <i class="fas fa-address-card"></i>
-        <div class="col">
-            <a type="button" class="btn btn-success" href="../pages/newProduct.html"><i class="fas fa-plus-square"></i>
-                New Product</a></div>
-    </div>
-    <div class="row">
         <div class="col-12">
             <table id="productsTable"
                    class="table table-bordered
                        table-condensed table-striped">
                 <thead>
                 <tr>
-                    <th class="small">Id</th>
+                    <th class="small td-alignment-center">Id</th>
                     <th class="small">Name</th>
-                    <th class="small">Price</th>
-                    <th class="small">Description</th>
-                    <th class="extend">
-                        <div class="small">Stock</div>
-                    </th>
-                    <th class="small">ImageURL</th>
-                    <th class="small">Edit</i></th>
-                    <th class="small">Remove</th>
+                    <th class="small td-alignment-center">Price</th>
+                    <th class="small extend">Description</th>
+                    <th class="small td-alignment-center">Stock</th>
+                    <th class="small td-alignment-center">ImageURL</th>
+                    <th class="small td-alignment-center">Edit</th>
+                    <th class="small td-alignment-center">Remove</th>
                 </tr>
                 </thead>
             </table>
-            <div style="text-align: center" class="col-12">
-                <button type="button" class="btn btn-danger" onclick="refreshProducts()"><i class="fas fa-spinner"></i>
-                    Get Data
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="btn-group" role="group" aria-label="ButtonGroupTop">
+                <button type="button" class="btn btn-primary" onclick="location.href='../index.html'"><i
+                        class="fas fa-arrow-left"></i>
+                    Back
+                </button>
+                <button type="button" class="btn btn-primary" onclick="refreshProducts()"><i
+                        class="fas fa-sync"></i>
+                    Refresh
+                </button>
+                <button type="button" class="btn btn-success" onclick="location.href='../pages/newProduct.html'"><i
+                        class="fas fa-plus"></i>
+                    New Product
                 </button>
             </div>
         </div>
     </div>
+</div>
+<div class="refreshSuccessAlert alert alert-info">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>ProductsTable refreshed!</strong> Products table is now up-to-date.
+</div>
+<div class="removedProductAlert alert alert-success">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Product removed!</strong> Product have been successfully removed..
 </div>
 <input type="hidden" id="customerId" value="0"/>
 
