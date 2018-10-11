@@ -77,6 +77,12 @@ $('#productsTable').on('click', '.btn.btn-danger', function ()
     removeProduct(productId);
 });
 
+$('#productsTable').on('click', '.btn.btn-info', function ()
+{
+    var productId = $(this).closest("tr").find(".productId").text();
+    editProduct(productId);
+});
+
 function buildProductRow(product)
 {
     /** @namespace product.stock */
@@ -93,4 +99,9 @@ function buildProductRow(product)
         "<td class='small'><button type='button' class='btn btn-danger' id='removeProduct'><i class='fas fa-minus fa-1x'></i></button></td>" +
         "</tr>";
     return ret;
+}
+
+function editProduct(id) {
+    window.open('../pages/editProduct.html?id=' + id);
+
 }

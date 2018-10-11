@@ -58,7 +58,8 @@ function buildProductRow(product)
     /** @namespace product.stock */
     /** @namespace product.price */
     let ret =
-        "<div class='product' onclick='getDetailsProduct()'>" +
+        "<div id='"+product.id +"'" +
+        "class='product' onclick='getDetailsProduct("+ product.id+")'>" +
         "<div class='product_img'>" +
         "<img src='" + product.imageURL + "' alt=''>" +
         "</div>" +
@@ -68,9 +69,9 @@ function buildProductRow(product)
     return ret;
 }
 
-function getDetailsProduct()
+function getDetailsProduct(id)
 {
-    window.location.href = 'detaljeside.html';
+    window.location.href = 'detaljeside.html?id='+id;
 }
 function addSeeMoreProductsButton()
 {
@@ -88,4 +89,17 @@ function handleException(request, message, error)
             request.responseJSON.Message + "\n";
     }
     alert(msg);
+}
+
+function getProductById(){
+        $.ajax({
+        url: "https://superbeerapi.azurewebsites.net/api/products/" + document.url.split('=')[1],
+        type: 'GET',
+        dataType: 'json',
+            success:function(product){
+            $("#productSingle").empty();
+            $("#productSingle").append(
+            )
+            }
+    })
 }
