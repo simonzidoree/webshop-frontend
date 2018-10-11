@@ -1,21 +1,18 @@
-body{
+body {
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 250px 1fr 100px;
     display: grid;
     background-color: #cccccc;
     grid-column-gap: 16px;
-    grid-template-areas: 
-    "hd hd hd hd hd hd hd hd hd hd hd hd "
-    "mn mn mn mn mn mn mn mn mn mn mn mn"
-    "ft ft ft ft ft ft ft ft ft ft ft ft"
-    ;
+    grid-template-areas: "hd hd hd hd hd hd hd hd hd hd hd hd " "mn mn mn mn mn mn mn mn mn mn mn mn" "ft ft ft ft ft ft ft ft ft ft ft ft";
     margin: 0px 140px;
 }
-header{
+
+header {
     background-color: #FFBE3D;
     grid-area: hd;
-    display: grid; 
-    background-image: url(../img/træplanker.jpg);
+    display: grid;
+    background-image: url(../img/woodplanks.jpg);
     background-position: center;
     background-color: #cccccc;
     background-repeat: no-repeat;
@@ -28,56 +25,53 @@ header{
 ul {
     display: flex;
 }
+
 li {
     list-style-type: none;
     border-right: 1px solid #ffffff;
     padding: 0 10px;
-} 
-li:last-child{
+}
+
+li:last-child {
     border-right: none;
 }
-a{
+
+a {
     color: #ffffff;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 25px;
     text-decoration: none;
 }
 
-
 #box1 {
-    grid-column: 1 / 4; 
-    grid-row: 1 / 5 ;
+    grid-column: 1 / 4;
+    grid-row: 1 / 5;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-image: url(../img/logo-edit.png);
-    background-position: center;
-    background-color: #cccccc;
-    background-repeat: no-repeat;
-    background-size:cover;
+    background: #cccccc url(../img/logo-edit.png) no-repeat center;
+    background-size: cover;
 }
 
-
 #box2 {
-    background-color: none  ;     
+    background-color: transparent;
     grid-row: 2 / 3;
-    grid-column: 9 / 13;  
+    grid-column: 9 / 13;
     text-align: center;
     display: flex;
     align-items: center;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    outline-style: auto;
-    outline-color: #ffffff;
+    outline: #ffffff auto;
     color: #ffffff;
     padding: 0 30px;
 }
 
 #box4 {
-    background-color:#131110;   
-    grid-row: 5 / 6;  
-    grid-column: 1 / 13; 
+    background-color: #131110;
+    grid-row: 5 / 6;
+    grid-column: 1 / 13;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-main{
+main {
     background-color: white;
     grid-area: mn;
     grid-template-columns: repeat(12, 1fr);
@@ -87,44 +81,46 @@ main{
     padding: 60px 0;
 }
 
-
-#product{
+.product {
     grid-column: span 3;
     background-color: #ffffff;
     position: relative;
- }
- .product_img {
-     width: 100%;
- }
- .product_img img {
-     width: 100%;
- }
+}
 
-h1{
+.product_img {
+
+    width: 100%;
+}
+
+.product_img img {
+    width: 100%;
+}
+
+h1 {
     font-family: garamond;
     font-size: 22px;
 }
-h2{
+
+h2 {
     font-family: garamond;
     font-size: 18px;
     color: #FFBF0A;
 }
-#product:hover {
-    border-color: #131110; 
+
+.product:hover {
+    border-color: #131110;
     outline: solid 3px;
 }
 
-footer{
+footer {
     grid-area: ft;
     grid-template-columns: 1 / 13;
     grid-template-rows: 8 / 12;
     display: grid;
 }
-.footerimage{
-    background-image: url(../img/træplanker.jpg);
-    background-position: center;
-    background-color: #cccccc;
-    background-repeat: no-repeat;
+
+.footerimage {
+    background: #cccccc url(../img/woodplanks.jpg) no-repeat center;
     background-size: cover;
     position: relative;
     display: grid;
