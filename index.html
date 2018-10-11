@@ -19,7 +19,7 @@
     <div id="box4">
         <nav>
             <ul>
-                <li><a href="">Produkter</a></li>
+                <li><a href="detaljeside.html">Produkt detaljeside</a></li>
                 <li><a href="pages/admin.html">Admin</a></li>
                 <li><a href="">Om os</a></li>
             </ul>
@@ -30,7 +30,8 @@
 
 <main class="productsView">
     <div id="product_see_more">
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="">
+        <button id="getMoreProducts" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
+                onclick="">
             Se flere øller
         </button>
     </div>
@@ -40,6 +41,8 @@
 <footer>
     <div class="footerimage"></div>
 </footer>
+
+<input type="hidden" id="productId" value="0"/>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 

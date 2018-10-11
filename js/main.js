@@ -1,7 +1,27 @@
+let pageCount = 1;
+
 $(function listProducts()
 {
     $.ajax({
-        url: "https://superbeerapi.azurewebsites.net/api/products",
+        url: "https://superbeerapi.azurewebsites.net/api/products?CurrentPage=1&ItemsPrPage=8",
+        type: 'GET',
+        dataType: 'json',
+        success: function (products)
+        {
+            onGetProductsSuccess(products);
+        },
+        error: function (request, message, error)
+        {
+            handleException(request, message, error);
+        }
+    });
+});
+
+$("#getMoreProducts").on("click", function getMoreProducts()
+{
+    pageCount += 1;
+    $.ajax({
+        url: "https://superbeerapi.azurewebsites.net/api/products?CurrentPage=" + pageCount + "&ItemsPrPage=8",
         type: 'GET',
         dataType: 'json',
         success: function (products)
@@ -38,7 +58,7 @@ function buildProductRow(product)
     /** @namespace product.stock */
     /** @namespace product.price */
     let ret =
-        "<div class='product'>" +
+        "<div class='product' onclick='getDetailsProduct()'>" +
         "<div class='product_img'>" +
         "<img src='" + product.imageURL + "' alt=''>" +
         "</div>" +
@@ -48,6 +68,10 @@ function buildProductRow(product)
     return ret;
 }
 
+function getDetailsProduct()
+{
+    window.location.href = 'detaljeside.html';
+}
 function addSeeMoreProductsButton()
 {
     $(" #product_see_more ").appendTo($(" .productsView "));
