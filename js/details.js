@@ -36,12 +36,12 @@ function buildProductDetails(product)
         "        </div>" +
         "        <div class='panel'><h4>Grimbergen Blonde</h4>" +
         "            <div class='product_img_detail2'>" +
-        "                <img src='" + product.imageURL + "' alt=''>" +
+        "                <img src='grimbergen-blonde.png' alt=''>" +
         "            </div>" +
         "        </div>" +
         "        <div class='panel'><h4>Køb ølglas</h4>" +
         "            <div class='product_img_detail3'>" +
-        "                <img src='" + product.imageURL + "' alt=''>" +
+        "                <img src='image.png' alt=''>" +
         "            </div>" +
         "        </div>" +
         "        <div id='line'></div>";
