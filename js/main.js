@@ -58,8 +58,8 @@ function buildProductRow(product)
     /** @namespace product.stock */
     /** @namespace product.price */
     let ret =
-        "<div id='"+product.id +"'" +
-        "class='product' onclick='getDetailsProduct("+ product.id+")'>" +
+        "<div id='" + product.id + "' " +
+        "class='product' onclick='getDetailsProduct(" + product.id + ")'>" +
         "<div class='product_img'>" +
         "<img src='" + product.imageURL + "' alt=''>" +
         "</div>" +
@@ -89,17 +89,4 @@ function handleException(request, message, error)
             request.responseJSON.Message + "\n";
     }
     alert(msg);
-}
-
-function getProductById(){
-        $.ajax({
-        url: "https://superbeerapi.azurewebsites.net/api/products/" + document.url.split('=')[1],
-        type: 'GET',
-        dataType: 'json',
-            success:function(product){
-            $("#productSingle").empty();
-            $("#productSingle").append(
-            )
-            }
-    })
 }

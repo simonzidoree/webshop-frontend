@@ -129,6 +129,6 @@ function buildProductRow(product)
 
 function editProduct(id)
 {
-    window.open('../pages/editProduct.html?id=' + id);
+    window.location.href = '../pages/editProduct.html?id=' + id;
 
 }
